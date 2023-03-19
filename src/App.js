@@ -11,7 +11,7 @@ import ProjectGallery from "./components/ProjectGallery";
 function App() {
   return (
     <div className="App">
-      //calling the components
+      {/* {calling the components} */}
       <Header />
       <Home />
       <Contact />
