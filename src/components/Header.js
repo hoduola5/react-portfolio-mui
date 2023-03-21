@@ -1,10 +1,5 @@
-//Header component
-// function Header() {
-//   return <h1>I'm the Header</h1>;
-// }
-
-// export default Header;
-
+//Importing modules
+import "./header.css";
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -14,41 +9,26 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import AdbIcon from "@mui/icons-material/Adb";
+import { Link } from "react-router-dom";
 import HO from "../images/HO.png";
-// import portImg from "../images/portfolio-img.png";
 
-const pages = ["Home", "Contact", "Projects", "ProjectGallery", "Resume"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-function ResponsiveAppBar() {
+//Header component
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <AppBar position="static" sx={{ backgroundColor: "rgba(24, 37, 84, 0.9)" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* LOGO */}
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +36,7 @@ function ResponsiveAppBar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex", height: "50px" }, //editted
+              display: { xs: "none", md: "flex", height: "50px" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -99,12 +79,25 @@ function ResponsiveAppBar() {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
+              class
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              {/* {Mobile} */}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography
+                  textAlign="center"
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Link to="/home">Home</Link>
+                  <Link to="/contact">Contact</Link>
+                  <Link to="/projects">Projects</Link>
+                  <Link to="/projectGallery">ProjectGallery</Link>
+                </Typography>
+              </MenuItem>
+              {/* ))} */}
             </Menu>
           </Box>
           <Typography
@@ -123,7 +116,6 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            {/* {mobile} */}
             <img
               src={HO}
               alt="My logo"
@@ -131,61 +123,23 @@ function ResponsiveAppBar() {
             />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <img
-                  src={portImg}
-                  alt="Portfolio Img"
-                  sx={{
-                    height: 0.2,
-                    width: 0.2,
-                    mr: 1,
-                  }}
-                /> */}
-                <Avatar
-                  alt="Hammed Portfolio"
-                  src="/static/images/avatar/2.jpg"
-                />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <Link to="/home" className="navlinks">
+              Home Page
+            </Link>
+            <Link to="/contact" className="navlinks">
+              Contact
+            </Link>
+            <Link to="/projects" className="navlinks">
+              Projects
+            </Link>
+            <Link to="/projectGallery" className="navlinks">
+              ProjectGallery
+            </Link>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+// To make Header available in other components
+export default Header;

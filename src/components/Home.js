@@ -1,10 +1,4 @@
 //Home component
-// function Home() {
-//   return <h1>I'm the Home page</h1>;
-// }
-
-// export default Home;
-
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -25,12 +19,6 @@ export default function ImgMediaCard() {
         margin: "auto",
       }}
     >
-      {/* <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-      /> */}
       <CardContent
         sx={{
           maxWidth: 345,
@@ -60,8 +48,6 @@ export default function ImgMediaCard() {
             height: "20vh",
             mr: 1,
             maxWidth: 10,
-            // marginLeft: "2px",
-            // width: 300,
           }}
         />
       </CardContent>
