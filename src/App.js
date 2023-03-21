@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       {/* {calling the components} */}
       <Header />
-      <Home />
-      <Contact />
+      {/* <Home /> */}
+      {/* <Contact /> */}
       <Projects />
       <ProjectGallery />
       {/* <header className="App-header">
