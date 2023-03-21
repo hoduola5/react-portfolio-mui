@@ -64,7 +64,6 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO{" "}
             <img
               src={HO}
               alt="My logo"
@@ -124,7 +123,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            {/* {mobile} */}
             <img
               src={HO}
               alt="My logo"
