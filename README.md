@@ -2,6 +2,8 @@
 
 The "react-portfolio-mui" is my portfolio website, where I can showcase my software development projects, tell you more about myself, and what I am looking for. This is also where you can take a look at my LinkedIn, my resume, and other profiles, and how to contact me in case you need my services.
 
+Here's the deployed URL: https://hoduola5.github.io/react-portfolio-mui/
+
 ## Resources Used
 
 - React.js
@@ -10,6 +12,7 @@ The "react-portfolio-mui" is my portfolio website, where I can showcase my softw
 - CSS
 - HTML
 - Git and GitHub
+- Netlify
 
 ## Features
 
@@ -17,10 +20,10 @@ The "react-portfolio-mui" is my portfolio website, where I can showcase my softw
 - Styled with Material UI and CSS.
 - Fully Responsive
 
-### Installation
+### Usage
 
 - Clone the repository
-- Follow the installation
+- Follow the installation process below
 
 ### Installation
 
