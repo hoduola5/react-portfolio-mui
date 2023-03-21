@@ -91,20 +91,7 @@ export default function SimpleContainer() {
           >
             <AspectRatio>
               <div>
-                {/* <ImageIcon fontSize="xl5" sx={{ color: "text.tertiary" }} /> */}
-                <img
-                  src={PortImg}
-                  alt="Portfolio Img"
-                  sx={
-                    {
-                      // height: 600,
-                      // mr: 1,
-                      // maxWidth: 10,
-                      // marginLeft: "2px",
-                      // width: 300,
-                    }
-                  }
-                />
+                <img src={PortImg} alt="Portfolio Img" />
               </div>
             </AspectRatio>
             <Typography mt={2} sx={{ color: "#FFFFFF", fontStyle: "bold" }}>

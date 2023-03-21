@@ -1,9 +1,4 @@
-//Header component
-// function Header() {
-//   return <h1>I'm the Header</h1>;
-// }
-
-// export default Header;
+//Importing modules
 import "./header.css";
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
@@ -14,33 +9,21 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-// import Avatar from "@mui/material/Avatar";
-// import Button from "@mui/material/Button";
-// import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import HO from "../images/HO.png";
 
-// const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-function ResponsiveAppBar() {
+//Header component
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "rgba(24, 37, 84, 0.9)" }}>
@@ -53,7 +36,7 @@ function ResponsiveAppBar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex", height: "50px" }, //editted
+              display: { xs: "none", md: "flex", height: "50px" },
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -103,7 +86,6 @@ function ResponsiveAppBar() {
                 <Typography
                   textAlign="center"
                   sx={{
-                    //   display: { xs: "block", md: "none" },
                     display: "flex",
                     justifyContent: "space-evenly",
                     flexDirection: "column",
@@ -141,64 +123,23 @@ function ResponsiveAppBar() {
             />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link to="/home" className="homecolor">
+            <Link to="/home" className="navlinks">
               Home Page
             </Link>
-            <Link to="/contact" className="homecolor">
+            <Link to="/contact" className="navlinks">
               Contact
             </Link>
-            <Link to="/projects" className="homecolor">
+            <Link to="/projects" className="navlinks">
               Projects
             </Link>
-            <Link to="/projectGallery" className="homecolor">
+            <Link to="/projectGallery" className="navlinks">
               ProjectGallery
             </Link>
           </Box>
-          {/* 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
-          {/* <img
-                  src={portImg}
-                  alt="Portfolio Img"
-                  sx={{
-                    height: 0.2,
-                    width: 0.2,
-                    mr: 1,
-                  }}
-                /> */}
-          {/* <Avatar
-                  alt="Hammed Portfolio"
-                  src="/static/images/avatar/2.jpg"
-                />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+// To make Header available in other components
+export default Header;

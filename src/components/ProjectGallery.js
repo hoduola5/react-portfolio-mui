@@ -1,6 +1,9 @@
+// Importing Projects
+import Projects from "./Projects";
+
 //Project component
-function Project() {
-  return <h1>Here is the Project</h1>;
+function ProjectGallery() {
+  return <Projects />;
 }
 
-export default Project;
+export default ProjectGallery;
